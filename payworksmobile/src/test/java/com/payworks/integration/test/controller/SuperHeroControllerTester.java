@@ -36,17 +36,6 @@ public class SuperHeroControllerTester {
         mvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
     }
 
-    /**
-     * Test debug method
-     * @throws Exception
-     */
-	@Test
-	public void getSuperHeroes() throws Exception {
-		mvc.perform(MockMvcRequestBuilders.get("/").accept(MediaType.APPLICATION_JSON))
-				.andExpect(status().isOk())
-				.andExpect(content().string(equalTo(Constants.createHero)));
-	}
-	
 	/**
 	 * Test /create route
 	 * @throws Exception
