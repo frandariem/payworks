@@ -29,13 +29,4 @@ public class Cache {
 		return superHeroes;
 	}
 
-	/**
-	 * @param superHeroes the superHeroes to set
-	 */
-	public void setSuperHeroes(ConcurrentHashMap<String, SuperHero> superHeroes) {
-		this.superHeroes = superHeroes;
-	}
-	
-	
-
 }
