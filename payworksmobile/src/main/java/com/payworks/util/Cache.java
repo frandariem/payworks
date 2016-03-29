@@ -19,7 +19,9 @@ public class Cache {
 	private ConcurrentHashMap<String,SuperHero> superHeroes;
 	
 	public Cache() {
-		superHeroes = new ConcurrentHashMap<String,SuperHero>();
+		if(superHeroes == null) {
+			superHeroes = new ConcurrentHashMap<String,SuperHero>();
+		}
 	}
 
 	/**

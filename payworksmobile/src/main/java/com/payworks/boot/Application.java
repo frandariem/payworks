@@ -6,6 +6,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
 
+import com.payworks.model.SuperHero;
+
 /**
  * Entry point of the application
  * @author franciscotineo

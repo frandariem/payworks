@@ -38,16 +38,15 @@ public class SuperHeroController {
 			if(superHero != null && superHero.getName() != null || superHero.getPseudonym() != null
 					|| !superHero.getAllies().isEmpty() || !superHero.getPowers().isEmpty() || superHero.getPublisher() != null) {
 				LOG.info("SuperHeroController::addSuperHero() -> SuperHero: " + superHero.toString());
-				if(cache.getSuperHeroes().contains(superHero)) {
-					return "SuperHero already exists!";
-				} else {
-					cache.getSuperHeroes().put(superHero.getName(), superHero);
-					if(!superHero.getAllies().isEmpty()) {
-						superHero.getAllies().forEach(allie -> {
-							cache.getSuperHeroes().put(allie.getName(), allie);
-						});
-					}
-					return "SuperHero added!";
+				cache.getSuperHeroes().put(superHero.getName(), superHero);
+				
+				if(!superHero.getAllies().isEmpty()) {
+					superHero.getAllies().forEach(allie -> {
+						cache.getSuperHeroes().put(allie.getName(), allie);
+					});
+			
+				return "SuperHero added!";
+				
 				}
 			} else {
 				return "SuperHero couldn't be added";

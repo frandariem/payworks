@@ -23,6 +23,27 @@ public class SuperHero implements Comparable<SuperHero>{
 		firstAppearance = format.format(new Date());
 	}
 	
+	@Override
+	public boolean equals(Object object) {
+		boolean result = false;
+		if (object == null || object.getClass() != getClass()) {
+			result = false;
+		} else {
+			SuperHero hero = (SuperHero) object;
+			if (this.name == hero.getName()) {
+				result = true;
+			}
+		}
+		return result;
+	}
+	
+	@Override
+	public int hashCode() {
+		int hash = 3;
+		hash = 7 * hash + this.name.hashCode();
+		return hash;
+	}
+	
 	/**
 	 * @return the name
 	 */
